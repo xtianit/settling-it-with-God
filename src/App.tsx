@@ -51,349 +51,183 @@ type BibleVersions = {
 type ScriptureDB = Record<string, BibleVersions>;
 
 const initialScriptureDB: ScriptureDB = {
-    "Hosea 4:6": {
-        KJV: "6 My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children.",
-        NKJV: "6 My people are destroyed for lack of knowledge. Because you have rejected knowledge, I also will reject you from being priest for Me; Because you have forgotten the law of your God, I also will forget your children.",
-        NIV: "6 My people are destroyed from lack of knowledge. Because you have rejected knowledge, I also reject you as my priests; because you have ignored the law of your God, I also will ignore your children.",
-        ESV: "6 My people are destroyed for lack of knowledge; because you have rejected knowledge, I reject you from being a priest to me. And since you have forgotten the law of your God, I also will forget your children.",
-        AMP: "6 My people are destroyed for lack of knowledge [of My law, where I reveal My will]. Because you [the priestly nation] have rejected knowledge, I will also reject you from being My priest. Since you have forgotten the law of your God, I will also forget your children.",
-        NLT: "6 My people are being destroyed because they don’t know me. Since you priests refuse to know me, I refuse to recognize you as my priests. Since you have forgotten the laws of your God, I will forget to bless your children."
-    },
-    "Matthew 24:12": {
-        KJV: "12 And because iniquity shall abound, the love of many shall wax cold.",
-        NKJV: "12 And because lawlessness will abound, the love of many will grow cold.",
-        NIV: "12 Because of the increase of wickedness, the love of most will grow cold,",
-        ESV: "12 And because lawlessness will be increased, the love of many will grow cold.",
-        AMP: "12 And because lawlessness will be increased, the love of most people will grow cold.",
-        NLT: "12 Sin will be rampant everywhere, and the love of many will grow cold."
-    },
-    "Matthew 24:38": {
-        KJV: "38 For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark,",
-        NKJV: "38 For as in the days before the flood, they were eating and drinking, marrying and giving in marriage, until the day that Noah entered the ark,",
-        NIV: "38 For in the days before the flood, people were eating and drinking, marrying and giving in marriage, up to the day Noah entered the ark;",
-        ESV: "38 For as in those days before the flood they were eating and drinking, marrying and giving in marriage, until the day when Noah entered the ark,",
-        AMP: "38 For as in those days before the flood they were eating and drinking, marrying and giving in marriage, until the [very] day when Noah entered the ark,",
-        NLT: "38 In those days before the flood, the people were enjoying banquets and parties and weddings right up to the time Noah entered his boat."
-    },
-    "John 14:6": {
-        KJV: "6 Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.",
-        NKJV: "6 Jesus said to him, “I am the way, the truth, and the life. No one comes to the Father except through Me.",
-        NIV: "6 Jesus answered, “I am the way and the truth and the life. No one comes to the Father except through me.",
-        ESV: "6 Jesus said to him, “I am the way, and the truth, and the life. No one comes to the Father except through me.",
-        AMP: "6 Jesus said to him, “I am the [only] Way [to God] and the [real] Truth and the [real] Life; no one comes to the Father but through Me.",
-        NLT: "6 Jesus told him, “I am the way, the truth, and the life. No one can come to the Father except through me."
-    },
-    "Galatians 1:13-14": {
-        KJV: "13 For ye have heard of my conversation in time past in the Jews' religion, how that beyond measure I persecuted the church of God, and wasted it: 14 And profited in the Jews' religion above many my equals in mine own nation, being more exceedingly zealous of the traditions of my fathers.",
-        NKJV: "13 For you have heard of my former conduct in Judaism, how I persecuted the church of God beyond measure and tried to destroy it. 14 And I advanced in Judaism beyond many of my contemporaries in my own nation, being more exceedingly zealous for the traditions of my fathers.",
-        NIV: "13 For you have heard of my previous way of life in Judaism, how intensely I persecuted the church of God and tried to destroy it. 14 I was advancing in Judaism beyond many of my own age among my people and was extremely zealous for the traditions of my fathers.",
-        ESV: "13 For you have heard of my former life in Judaism, how I persecuted the church of God violently and tried to destroy it. 14 And I was advancing in Judaism beyond many of my own age among my people, so extremely zealous was I for the traditions of my fathers.",
-        AMP: "13 You have heard of my past career and former manner of life in the Jewish religion (Judaism), how I employed myself in persecuting and attacking the church of God violently and tried to destroy it. 14 And I [was] advancing in Judaism beyond many of my contemporaries among my countrymen, being more extremely zealous for the traditions of my fathers.",
-        NLT: "13 You know what I was like when I followed the Jewish religion—how I violently persecuted God’s church. I did my best to destroy it. 14 I was far ahead of my fellow Jews in my zeal for the traditions of my ancestors."
-    },
-    "Philippians 2:3": {
-        KJV: "3 Let nothing be done through strife or vainglory; but in lowliness of mind let each esteem other better than themselves.",
-        NKJV: "3 Let nothing be done through selfish ambition or conceit, but in lowliness of mind let each esteem others better than himself.",
-        NIV: "3 Do nothing out of selfish ambition or vain conceit. Rather, in humility value others above yourselves,",
-        ESV: "3 Do nothing from selfish ambition or conceit, but in humility count others more significant than yourselves.",
-        AMP: "3 Do nothing from selfishness or empty conceit [through factional motives, or strife], but with [an attitude of] humility [being neither arrogant nor self-righteous], regard others as more important than yourselves.",
-        NLT: "3 Don’t be selfish; don’t try to impress others. Be humble, thinking of others as better than yourselves."
-    },
-    "Colossians 2:8": {
-        KJV: "8 Beware lest any man spoil you through philosophy and vain deceit, after the tradition of men, after the rudiments of the world, and not after Christ.",
-        NKJV: "8 Beware lest anyone cheat you through philosophy and empty deceit, according to the tradition of men, according to the basic principles of the world, and not according to Christ.",
-        NIV: "8 See to it that no one takes you captive through hollow and deceptive philosophy, which depends on human tradition and the elemental spiritual forces of this world rather than on Christ.",
-        ESV: "8 See to it that no one takes you captive by philosophy and empty deceit, according to human tradition, according to the elemental spirits of the world, and not according to Christ.",
-        AMP: "8 See to it that no one takes you captive through philosophy and empty deception [pseudo-intellectual babble], according to the tradition [and musings] of mere men, following the elementary principles of this world, rather than following [the truth—the teachings of] Christ.",
-        NLT: "8 Don’t let anyone capture you with empty philosophies and high-sounding nonsense that come from human thinking and from the spiritual powers of this world, rather than from Christ."
-    },
-    "Colossians 2:20": {
-        KJV: "20 Wherefore if ye be dead with Christ from the rudiments of the world, why, as though living in the world, are ye subject to ordinances,",
-        NKJV: "20 Therefore, if you died with Christ from the basic principles of the world, why, as though living in the world, do you subject yourselves to regulations—",
-        NIV: "20 Since you died with Christ to the elemental spiritual forces of this world, why, as though you still belonged to the world, do you submit to its rules:",
-        ESV: "20 If with Christ you died to the elemental spirits of the world, why, as if you were still alive in the world, do you submit to regulations—",
-        AMP: "20 If you have died with Christ to the elementary principles of the world, why, as if you were still living in the world, do you submit to rules and regulations, such as,",
-        NLT: "20 You have died with Christ, and he has set you free from the spiritual powers of this world. So why do you keep on following the rules of the world, such as,"
-    },
-    "1 Corinthians 3:1-5": {
-        KJV: "1 And I, brethren, could not speak unto you as unto spiritual, but as unto carnal, even as unto babes in Christ. 2 I have fed you with milk, and not with meat: for hitherto ye were not able to bear it, neither yet now are ye able. 3 For ye are yet carnal: for whereas there is among you envying, and strife, and divisions, are ye not carnal, and walk as men? 4 For while one saith, I am of Paul; and another, I am of Apollos; are ye not carnal? 5 Who then is Paul, and who is Apollos, but ministers by whom ye believed, even as the Lord gave to every man?",
-        NKJV: "1 And I, brethren, could not speak to you as to spiritual people but as to carnal, as to babes in Christ. 2 I fed you with milk and not with solid food; for until now you were not able to receive it, and even now you are still not able; 3 for you are still carnal. For where there is envy, strife, and divisions among you, are you not carnal and behaving like mere men? 4 For when one says, “I am of Paul,” and another, “I am of Apollos,” are you not carnal? 5 Who then is Paul, and who is Apollos, but ministers through whom you believed, as the Lord gave to each one?",
-        NIV: "1 Brothers and sisters, I could not address you as people who live by the Spirit but as people who are still worldly—mere infants in Christ. 2 I gave you milk, not solid food, for you were not yet ready for it. Indeed, you are still not ready. 3 You are still worldly. For since there is jealousy and quarreling among you, are you not worldly? Are you not acting like mere humans? 4 For when one says, “I follow Paul,” and another, “I follow Apollos,” are you not mere human beings? 5 What, after all, is Apollos? And what is Paul? Only servants, through whom you came to believe—as the Lord has assigned to each his task.",
-        ESV: "1 But I, brothers, could not address you as spiritual people, but as people of the flesh, as infants in Christ. 2 I fed you with milk, not solid food, for you were not ready for it. And even now you are not yet ready, 3 for you are still of the flesh. For while there is jealousy and strife among you, are you not of the flesh and behaving only in a human way? 4 For when one says, “I follow Paul,” and another, “I follow Apollos,” are you not being merely human? 5 What then is Apollos? What is Paul? Servants through whom you believed, as the Lord assigned to each.",
-        AMP: "1 However, brothers and sisters, I could not talk to you as to spiritual people [people dominated by the Spirit], but as to worldly people [dominated by human nature], as to infants [in the new life] in Christ! 2 I fed you with milk, not solid food; for you were not yet able to receive it. Even now you are still not ready. 3 You are still worldly [controlled by ordinary impulses, the sinful capacity]. For as long as there is jealousy and strife and discord among you, are you not unspiritual, and are you not walking like ordinary men [unchanged by faith]? 4 For when one of you says, “I am [a disciple] of Paul,” and another, “I am [a disciple] of Apollos,” are you not [proving yourselves to be] merely [unchanged] men? 5 What then is Apollos? And what is Paul? Just servants through whom you believed [in Christ], even as the Lord appointed to each his task.",
-        NLT: "1 Dear brothers and sisters, when I was with you I couldn’t talk to you as I would to spiritual people. I had to talk as though you belonged to this world or as though you were infants in Christ. 2 I had to feed you with milk, not with solid food, because you weren’t ready for anything stronger. And you still aren’t ready, 3 for you are still controlled by your sinful nature. You are jealous of one another and quarrel with each other. Doesn’t that prove you are controlled by your sinful nature? Aren’t you living like people of the world? 4 When one of you says, “I am a follower of Paul,” and another says, “I follow Apollos,” aren’t you acting just like people of the world? 5 After all, who is Apollos? Who is Paul? We are only God’s servants through whom you believed the Good News. Each of us did the work the Lord gave us."
-    },
-    "1 Corinthians 3:8": {
-        KJV: "8 Now he that planteth and he that watereth are one: and every man shall receive his own reward according to his own labour.",
-        NKJV: "8 Now he who plants and he who waters are one, and each one will receive his own reward according to his own labor.",
-        NIV: "8 The one who plants and the one who waters have one purpose, and they will each be rewarded according to their own labor.",
-        ESV: "8 He who plants and he who waters are one, and each will receive his wages according to his labor.",
-        AMP: "8 Now he who plants and he who waters are one [in importance and esteem, working toward the same purpose]; but each will receive his own reward according to his own labor.",
-        NLT: "8 The one who plants and the one who waters work together with the same purpose. And both will be rewarded for their own hard work."
-    },
-    "1 Corinthians 12:13": {
-        KJV: "13 For by one Spirit are we all baptized into one body, whether we be Jews or Gentiles, whether we be bond or free; and have been all made to drink into one Spirit.",
-        NKJV: "13 For by one Spirit we were all baptized into one body—whether Jews or Greeks, whether slaves or free—and have all been made to drink into one Spirit.",
-        NIV: "13 For we were all baptized by one Spirit so as to form one body—whether Jews or Gentiles, slave or free—and we were all given the one Spirit to drink.",
-        ESV: "13 For in one Spirit we were all baptized into one body—Jews or Greeks, slaves or free—and all were made to drink of one Spirit.",
-        AMP: "13 For by one [Holy] Spirit we were all baptized into one body, [spiritually transformed—united together] whether Jews or Greeks (Gentiles), slaves or free, and we were all made to drink of one [Holy] Spirit [since the same Holy Spirit fills each life].",
-        NLT: "13 Some of us are Jews, some are Gentiles, some are slaves, and some are free. But we have all been baptized into one body by one Spirit, and we all share the same Spirit."
-    },
-    "1 Corinthians 14:29-33": {
-        KJV: "29 Let the prophets speak two or three, and let the other judge. 30 If any thing be revealed to another that sitteth by, let the first hold his peace. 31 For ye may all prophesy one by one, that all may learn, and all may be comforted. 32 And the spirits of the prophets are subject to the prophets. 33 For God is not the author of confusion, but of peace, as in all churches of the saints.",
-        NKJV: "29 Let two or three prophets speak, and let the others judge. 30 But if anything is revealed to another who sits by, let the first keep silent. 31 For you can all prophesy one by one, that all may learn and all may be encouraged. 32 And the spirits of the prophets are subject to the prophets. 33 For God is not the author of confusion but of peace, as in all the churches of the saints.",
-        NIV: "29 Two or three prophets should speak, and the others should weigh carefully what is said. 30 And if a revelation comes to someone who is sitting down, the first speaker should stop. 31 For you can all prophesy in turn so that everyone may be instructed and encouraged. 32 The spirits of prophets are subject to the control of prophets. 33 For God is not a God of disorder but of peace—as in all the congregations of the Lord’s people.",
-        ESV: "29 Let two or three prophets speak, and let the others weigh what is said. 30 If a revelation is made to another sitting there, let the first be silent. 31 For you can all prophesy one by one, so that all may learn and all be encouraged, 32 and the spirits of prophets are subject to prophets. 33 For God is not a God of confusion but of peace. As in all the churches of the saints,",
-        AMP: "29 Let two or three prophets speak [as inspired by the Holy Spirit], and let the others weigh what is said [testing it by the Word of God]. 30 But if a revelation is made to another who is seated [nearby], let the first one be silent. 31 For you can all prophesy one by one [taking your turn], so that all may learn and all may be exhorted [and encouraged]. 32 The spirits of prophets are subject to the prophets [the prophecy is under the speaker’s control, and he can stop speaking]; 33 for God is not a God of confusion and disorder but of peace and order. As [is the practice] in all the churches of the saints (God’s people),",
-        NLT: "29 Let two or three people prophesy, and let the others evaluate what is said. 30 But if someone is prophesying and another person receives a revelation from the Lord, the one who is speaking must stop. 31 In this way, all who prophesy will have a turn to speak, one after the other, so that everyone will learn and be encouraged. 32 Remember that people who prophesy are in control of their spirit and can take turns. 33 For God is not a God of disorder but of peace, as in all the meetings of God’s holy people."
-    },
-    "1 Corinthians 3:3-4": {
-        KJV: "3 For ye are yet carnal: for whereas there is among you envying, and strife, and divisions, are ye not carnal, and walk as men? 4 For while one saith, I am of Paul; and another, I am of Apollos; are ye not carnal?",
-        NKJV: "3 for you are still carnal. For where there is envy, strife, and divisions among you, are you not carnal and behaving like mere men? 4 For when one says, “I am of Paul,” and another, “I am of Apollos,” are you not carnal?",
-        NIV: "3 You are still worldly. For since there is jealousy and quarreling among you, are you not worldly? Are you not acting like mere humans? 4 For when one says, “I follow Paul,” and another, “I follow Apollos,” are you not mere human beings?",
-        ESV: "3 for you are still of the flesh. For while there is jealousy and strife among you, are you not of the flesh and behaving only in a human way? 4 For when one says, “I follow Paul,” and another, “I follow Apollos,” are you not being merely human?",
-        AMP: "3 You are still worldly [controlled by ordinary impulses, the sinful capacity]. For as long as there is jealousy and strife and discord among you, are you not unspiritual, and are you not walking like ordinary men [unchanged by faith]? 4 For when one of you says, “I am [a disciple] of Paul,” and another, “I am [a disciple] of Apollos,” are you not [proving yourselves to be] merely [unchanged] men?",
-        NLT: "3 for you are still controlled by your sinful nature. You are jealous of one another and quarrel with each other. Doesn’t that prove you are controlled by your sinful nature? Aren’t you living like people of the world? 4 When one of you says, “I am a follower of Paul,” and another says, “I follow Apollos,” aren’t you acting just like people of the world?"
-    },
-    "2 Timothy 2:4": {
-        KJV: "4 No man that warreth entangleth himself with the affairs of this life; that he may please him who hath chosen him to be a soldier.",
-        NKJV: "4 No one engaged in warfare entangles himself with the affairs of this life, that he may please him who enlisted him as a soldier.",
-        NIV: "4 No one serving as a soldier gets entangled in civilian affairs, but rather tries to please his commanding officer.",
-        ESV: "4 No soldier gets entangled in civilian pursuits, since his aim is to please the one who enlisted him.",
-        AMP: "4 No soldier in active service gets entangled in the [ordinary business] affairs of civilian life; [he avoids them] so that he may please the one who enlisted him to serve.",
-        NLT: "4 Soldiers don’t get tied up in the affairs of civilian life, for then they cannot please the officer who enlisted them."
-    },
-    "2 Timothy 4:10": {
-        KJV: "10 For Demas hath forsaken me, having loved this present world, and is departed unto Thessalonica; Crescens to Galatia, Titus unto Dalmatia.",
-        NKJV: "10 for Demas has forsaken me, having loved this present world, and has departed for Thessalonica—Crescens for Galatia, Titus for Dalmatia.",
-        NIV: "10 for Demas, because he loved this world, has deserted me and has gone to Thessalonica. Crescens has gone to Galatia, and Titus to Dalmatia.",
-        ESV: "10 For Demas, in love with this present world, has deserted me and gone to Thessalonica. Crescens has gone to Galatia, Titus to Dalmatia.",
-        AMP: "10 for Demas, having loved [the pleasures of] this present world, has deserted me and gone to Thessalonica; Crescens has gone to Galatia, Titus to Dalmatia.",
-        NLT: "10 Demas has deserted me because he loves the things of this life and has gone to Thessalonica. Crescens has gone to Galatia, and Titus has gone to Dalmatia."
-    },
-    "1 John 2:16": {
-        KJV: "16 For all that is in the world, the lust of the flesh, and the lust of the eyes, and the pride of life, is not of the Father, but is of the world.",
-        NKJV: "16 For all that is in the world—the lust of the flesh, the lust of the eyes, and the pride of life—is not of the Father but is of the world.",
-        NIV: "16 For everything in the world—the lust of the flesh, the lust of the eyes, and the pride of life—comes not from the Father but from the world.",
-        ESV: "16 For all that is in the world—the desires of the flesh and the desires of the eyes and pride of life—is not from the Father but is from the world.",
-        AMP: "16 For all that is in the world—the lust and sensual craving of the flesh and the lust and longing of the eyes and the boastful pride of life [pretentious confidence in one’s resources or in the stability of earthly things]—these do not come from the Father, but are from the world.",
-        NLT: "16 For the world offers only a craving for physical pleasure, a craving for everything we see, and pride in our achievements and possessions. These are not from the Father, but are from this world."
-    },
-    "Galatians 1:14": {
-        KJV: "14 And profited in the Jews' religion above many my equals in mine own nation, being more exceedingly zealous of the traditions of my fathers.",
-        NKJV: "14 And I advanced in Judaism beyond many of my contemporaries in my own nation, being more exceedingly zealous for the traditions of my fathers.",
-        NIV: "14 I was advancing in Judaism beyond many of my own age among my people and was extremely zealous for the traditions of my fathers.",
-        ESV: "14 And I was advancing in Judaism beyond many of my own age among my people, so extremely zealous was I for the traditions of my fathers.",
-        AMP: "14 And I [was] advancing in Judaism beyond many of my contemporaries among my countrymen, being more extremely zealous for the traditions of my fathers.",
-        NLT: "14 I was far ahead of my fellow Jews in my zeal for the traditions of my ancestors."
-    },
-   
+  "Matthew 7:7": {
+    KJV: "7 Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:",
+    NKJV: "7 “Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.",
+    NIV: "7 “Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
+    ESV: "7 “Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.",
+    AMP: "7 “Ask and keep on asking and it will be given to you; seek and keep on searching and you will find; knock and keep on knocking and the door will be opened to you.",
+    NLT: "7 “Keep on asking, and you will receive what you ask for. Keep on seeking, and you will find. Keep on knocking, and the door will be opened to you."
+  },
+  "Matthew 7:8": {
+    KJV: "8 For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened.",
+    NKJV: "8 For everyone who asks receives, and he who seeks finds, and to him who knocks it will be opened.",
+    NIV: "8 For everyone who asks receives; the one who seeks finds; and to the one who knocks, the door will be opened.",
+    ESV: "8 For everyone who asks receives, and the one who seeks finds, and to the one who knocks it will be opened.",
+    AMP: "8 For everyone who keeps on asking receives, and he who keeps on seeking finds, and to him who keeps on knocking, it will be opened.",
+    NLT: "8 For everyone who asks, receives. Everyone who seeks, finds. And to everyone who knocks, the door will be opened."
+  },
+  "1 Kings 18:41": {
+    KJV: "41 And Elijah said unto Ahab, Get thee up, eat and drink; for there is a sound of abundance of rain.",
+    NKJV: "41 Then Elijah said to Ahab, “Go up, eat and drink; for there is the sound of abundance of rain.”",
+    NIV: "41 And Elijah said to Ahab, “Go, eat and drink, for there is the sound of a heavy rain.”",
+    ESV: "41 And Elijah said to Ahab, “Go up, eat and drink, for there is a sound of the rushing of rain.”",
+    AMP: "41 Elijah said to Ahab, “Go up, eat and drink, for there is the sound of the roar of an abundance of rain.”",
+    NLT: "41 Then Elijah said to Ahab, “Go on up and have a food and drink, for I hear a mighty rainstorm coming!”"
+  },
+  "1 Kings 18:42": {
+    KJV: "42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he cast himself down upon the earth, and put his face between his knees,",
+    NKJV: "42 So Ahab went up to eat and drink. And Elijah went up to the top of Carmel; then he bowed down on the ground, and put his face between his knees,",
+    NIV: "42 So Ahab went off to eat and drink, but Elijah climbed to the top of Carmel, bent down to the ground and put his face between his knees.",
+    ESV: "42 So Ahab went up to eat and to drink. And Elijah went up to the top of Mount Carmel. And he bowed himself down on the earth and put his face between his knees.",
+    AMP: "42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he crouched down on the earth and put his face between his knees,",
+    NLT: "42 So Ahab went to eat and drink. But Elijah climbed to the top of Mount Carmel and bowed low to the ground and prayed with his face between his knees."
+  },
+  "1 Kings 18:41-42": {
+    KJV: "41 And Elijah said unto Ahab, Get thee up, eat and drink; for there is a sound of abundance of rain. 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he cast himself down upon the earth, and put his face between his knees,",
+    NKJV: "41 Then Elijah said to Ahab, “Go up, eat and drink; for there is the sound of abundance of rain.” 42 So Ahab went up to eat and drink. And Elijah went up to the top of Carmel; then he bowed down on the ground, and put his face between his knees,",
+    NIV: "41 And Elijah said to Ahab, “Go, eat and drink, for there is the sound of a heavy rain.” 42 So Ahab went off to eat and drink, but Elijah climbed to the top of Carmel, bent down to the ground and put his face between his knees.",
+    ESV: "41 And Elijah said to Ahab, “Go up, eat and drink, for there is a sound of the rushing of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Mount Carmel. And he bowed himself down on the earth and put his face between his knees.",
+    AMP: "41 Elijah said to Ahab, “Go up, eat and drink, for there is the sound of the roar of an abundance of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he crouched down on the earth and put his face between his knees,",
+    NLT: "41 Then Elijah said to Ahab, “Go on up and have a food and drink, for I hear a mighty rainstorm coming!” 42 So Ahab went to eat and drink. But Elijah climbed to the top of Mount Carmel and bowed low to the ground and prayed with his face between his knees."
+  },
+  "1 Kings 18:41-46": {
+    KJV: "41 And Elijah said unto Ahab, Get thee up, eat and drink; for there is a sound of abundance of rain. 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he cast himself down upon the earth, and put his face between his knees, 43 And said to his servant, Go up now, look toward the sea. And he went up, and looked, and said, There is nothing. And he said, Go again seven times. 44 And it came to pass at the seventh time, that he said, Behold, there ariseth a little cloud out of the sea, like a man's hand. And he said, Go up, say unto Ahab, Prepare thy chariot, and get thee down, that the rain stop thee not. 45 And it came to pass in the mean while, that the heaven was black with clouds and wind, and there was a great rain. And Ahab rode, and went to Jezreel. 46 And the hand of the Lord was on Elijah; and he girded up his loins, and ran before Ahab to the entrance of Jezreel.",
+    NKJV: "41 Then Elijah said to Ahab, “Go up, eat and drink; for there is the sound of abundance of rain.” 42 So Ahab went up to eat and drink. And Elijah went up to the top of Carmel; then he bowed down on the ground, and put his face between his knees, 43 and said to his servant, “Go up now, look toward the sea.” So he went up and looked, and said, “There is nothing.” And seven times he said, “Go again.” 44 Then it came to pass the seventh time, that he said, “There is a cloud, as small as a man’s hand, rising out of the sea!” So he said, “Go up, say to Ahab, ‘Prepare your chariot, and go down before the rain stops you.’” 45 Now it happened in the meantime that the sky became black with clouds and wind, and there was a heavy rain. So Ahab rode away and went to Jezreel. 46 Then the hand of the Lord came upon Elijah; and he girded up his loins and ran ahead of Ahab to the entrance of Jezreel.",
+    NIV: "41 And Elijah said to Ahab, “Go, eat and drink, for there is the sound of a heavy rain.” 42 So Ahab went off to eat and drink, but Elijah climbed to the top of Carmel, bent down to the ground and put his face between his knees. 43 “Go and look toward the sea,” he told his servant. And he went up and looked. “There is nothing there,” he said. Seven times Elijah said, “Go back.” 44 The seventh time the servant reported, “A cloud as small as a man’s hand is rising from the sea.” So Elijah said, “Go and tell Ahab, ‘Hitch up your chariot and go down before the rain stops you.’” 45 Meanwhile, the sky grew black with clouds, the wind rose, a heavy rain started falling and Ahab rode off to Jezreel. 46 The power of the Lord came on Elijah and, tucking his cloak into his belt, he ran ahead of Ahab all the way to Jezreel.",
+    ESV: "41 And Elijah said to Ahab, “Go up, eat and drink, for there is a sound of the rushing of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Mount Carmel. And he bowed himself down on the earth and put his face between his knees. 43 And he said to his servant, “Go up now, look toward the sea.” And he went up and looked and said, “There is nothing.” And he said, “Go again,” seven times. 44 And at the seventh time he said, “Behold, a little cloud like a man's hand is rising from the sea.” And he said, “Go up, say to Ahab, ‘Prepare your chariot and go down, lest the rain stop you.’” 45 And in a little while the heavens grew black with clouds and wind, and there was a great rain. And Ahab rode and went to Jezreel. 46 And the hand of the Lord was on Elijah, and he gathered up his garment and ran before Ahab to the entrance of Jezreel.",
+    AMP: "41 Elijah said to Ahab, “Go up, eat and drink, for there is the sound of the roar of an abundance of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he crouched down on the earth and put his face between his knees, 43 and said to his servant, “Go up now, look toward the sea.” So he went up and looked and said, “There is nothing.” Elijah said, “Go again” seven times. 44 And at the seventh time the servant said, “A cloud as small as a man’s hand is rising from the sea.” And Elijah said, “Go up, say to Ahab, ‘Prepare your chariot and go down, so that the rain does not stop you.’” 45 In a little while the sky grew black with clouds and wind, and there was a heavy rain. And Ahab rode and went to Jezreel. 46 Then the hand of the Lord was on Elijah [giving him supernatural strength]; he girded up his loins and outran Ahab to the entrance of Jezreel [nearly twenty miles].",
+    NLT: "41 Then Elijah said to Ahab, “Go on up and have a food and drink, for I hear a mighty rainstorm coming!” 42 So Ahab went to eat and drink. But Elijah climbed to the top of Mount Carmel and bowed low to the ground and prayed with his face between his knees. 43 Then he said to his servant, “Go and look out toward the sea.” The servant went and looked, then returned to Elijah and said, “I didn’t see anything.” Seven times Elijah told him to go and look. 44 Finally the seventh time, his servant told him, “I saw a little cloud about the size of a man’s hand rising from the sea.” Then Elijah shouted, “Hurry to Ahab and tell him, ‘Climb into your chariot and go back home. If you don’t hurry, the rain will stop you!’” 45 And soon the sky was black with clouds. A heavy wind brought a terrific rainstorm, and Ahab left quickly for Jezreel. 46 Then the Lord gave special strength to Elijah. He tucked his cloak into his belt and ran ahead of Ahab’s chariot all the way to the entrance of Jezreel."
+  },
+  "1 John 5:14": {
+    KJV: "14 And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:",
+    NKJV: "14 Now this is the confidence that we have in Him, that if we ask anything according to His will, He hears us.",
+    NIV: "14 This is the confidence we have in approaching God: that if we ask anything according to his will, he hears us.",
+    ESV: "14 And this is the confidence that we have toward him, that if we ask anything according to his will he hears us.",
+    AMP: "14 This is the [remarkable degree of] confidence which we have in Him, that if we ask anything according to His will, [that is, consistent with His plan and purpose] He hears us.",
+    NLT: "14 And we are confident that he hears us whenever we ask for anything that pleases him."
+  },
+  "Isaiah 2:2-3": {
+    KJV: "2 And it shall come to pass in the last days, that the mountain of the Lord's house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it. 3 And many people shall go and say, Come ye, and let us go up to the mountain of the Lord, to the house of the God of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of the Lord from Jerusalem.",
+    NKJV: "2 Now it shall come to pass in the latter days That the mountain of the Lord’s house Shall be established on the top of the mountains, And shall be exalted above the hills; And all nations shall flow to it. 3 Many people shall come and say, “Come, and let us go up to the mountain of the Lord, To the house of the God of Jacob; He will teach us His ways, And we will walk in His paths.” For out of Zion shall go forth the law, And the word of the Lord from Jerusalem.",
+    NIV: "2 In the last days the mountain of the Lord’s temple will be established as the highest of the mountains; it will be shifted above the hills, and all nations will stream to it. 3 Many peoples will come and say, “Come, let us go up to the mountain of the Lord, to the temple of the God of Jacob. He will teach us his ways, so that we may walk in his paths.” The law will go out from Zion, the word of the Lord from Jerusalem.",
+    ESV: "2 It shall come to pass in the latter days that the mountain of the house of the Lord shall be established as the highest of the mountains, and shall be lifted up above the hills; and all the nations shall flow to it, 3 and many peoples shall come, and say: “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob, that he may teach us his ways and that we may walk in his paths.” For out of Zion shall go forth the law, and the word of the Lord from Jerusalem.",
+    AMP: "2 Now it will come to pass in the last days that the mountain of the house of the Lord will be established as the highest of the mountains and will be raised above the hills; and all the nations will stream to it. 3 And many peoples will come and say, “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob; that He may teach us His ways and that we may walk in His paths.” For the law will go out from Zion and the word of the Lord from Jerusalem.",
+    NLT: "2 In the last days, the mountain of the Lord’s house will be the highest of all—the most important place on earth. It will be raised above the other hills, and people from all over the world will stream there to worship. 3 People from many nations will come and say, “Come, let us go up to the mountain of the Lord, to the house of Jacob’s God. There he will teach us his ways, and we will walk in his paths.” For the Lord’s teaching will go out from Zion; his word will go out from Jerusalem."
+  },
+  "Micah 4:1-2": {
+    KJV: "1 But in the last days it shall come to pass, that the mountain of the house of the Lord shall be established in the top of the mountains, and it shall be exalted above the hills; and people shall flow unto it. 2 And many nations shall come, and say, Come, and let us go up to the mountain of the Lord, and to the house of the God of Jacob; and he will teach us of his ways, and we will walk in his paths: for the law shall go forth of Zion, and the word of the Lord from Jerusalem.",
+    NKJV: "1 Now it shall come to pass in the latter days That the mountain of the Lord’s house Shall be established on the top of the mountains, And shall be exalted above the hills; And peoples shall flow to it. 2 Many nations shall come and say, “Come, and let us go up to the mountain of the Lord, To the house of the God of Jacob; He will teach us His ways, And we will walk in His paths.” For out of Zion the law shall go forth, And the word of the Lord from Jerusalem.",
+    NIV: "1 In the last days the mountain of the Lord’s temple will be established as the highest of the mountains; it will be exalted above the hills, and peoples will stream to it. 2 Many nations will come and say, “Come, let us go up to the mountain of the Lord, to the temple of the God of Jacob. He will teach us his ways, so that we may walk in his paths.” The law will go out from Zion, the word of the Lord from Jerusalem.",
+    ESV: "1 It shall come to pass in the latter days that the mountain of the house of the Lord shall be established as the highest of the mountains, and it shall be lifted up above the hills; and peoples shall flow to it, 2 and many nations shall come, and say: “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob, that he may teach us his ways and that we may walk in his paths.” For out of Zion shall go forth the law, and the word of the Lord from Jerusalem.",
+    AMP: "1 But it shall come to pass in the last days that the mountain of the house of the Lord shall be established as the highest of the mountains; and it shall be exalted above the hills, and peoples shall stream to it. 2 And many nations shall come and say, “Come, let us go up to the mountain of the Lord and to the house of the God of Jacob, that He may teach us His ways and that we may walk in His paths.” For the law shall go forth from Zion and the word of the Lord from Jerusalem.",
+    NLT: "1 In the last days, the mountain of the Lord’s house will be the highest of all—the most important place on earth. It will be raised above the other hills, and people from all over the world will stream there to worship. 2 People from many nations will come and say, “Come, let us go up to the mountain of the Lord, to the house of Jacob’s God. There he will teach us his ways, and we will walk in his paths.” For the Lord’s teaching will go out from Zion; his word will go out from Jerusalem."
+  }
 };
 
-// const quizQuestions = [
-//     {
-//         q: "Daniel and his friends refused the king’s food. Beyond obedience, what principle does this demonstrate about moral integrity in a corrupt environment?",
-//         a: [
-//             "Moral integrity requires conscious, personal decisions regardless of external pressure",
-//             "It is enough to avoid sin occasionally when convenient",
-//             "Integrity is determined by public recognition",
-//             "Compromise is acceptable if it ensures personal comfort"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "In Daniel 1:8, Daniel 'purposed in his heart.' What does this teach about the relationship between intention and action?",
-//         a: [
-//             "Internal resolve precedes and empowers outward obedience",
-//             "Actions are irrelevant if intentions are good",
-//             "Only public declarations matter, not internal purpose",
-//             "Faith is passive; decisions happen automatically"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "How does Daniel 1:17 illustrate the principle of divine partnership in human decision-making?",
-//         a: [
-//             "God equips and enhances the effectiveness of those who remain undefiled",
-//             "God’s favor bypasses personal responsibility entirely",
-//             "Divine help is only for physical survival, not wisdom",
-//             "Human effort alone is sufficient without reliance on God"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "Why might Daniel 1:6–7 be considered an example of navigating cultural assimilation without spiritual compromise?",
-//         a: [
-//             "They adopted necessary aspects of their environment while refusing to internalize ungodly values",
-//             "They fully isolated themselves to maintain purity",
-//             "They conformed outwardly but abandoned principles internally",
-//             "They relied solely on persuasion to change the culture around them"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "Daniel and his friends succeeded in part because they 'made an effort' (Daniel 1:9–14). What does this teach about human initiative in God’s plan?",
-//         a: [
-//             "Faithful action is required to access God’s provision and favor",
-//             "God acts automatically regardless of human effort",
-//             "Success is unrelated to moral decisions",
-//             "Human effort is futile in the presence of divine will"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "Considering Daniel 1:18–19, how does God’s favor manifest in leadership and societal recognition when one stands for righteousness?",
-//         a: [
-//             "God positions and distinguishes His faithful servants, even in worldly systems",
-//             "God removes faithful people from positions of influence",
-//             "Worldly systems always oppose righteousness without exception",
-//             "Recognition is only a result of self-promotion"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "From Daniel 1, what can we infer about the subtle ways environments can attempt to 'pollute' believers?",
-//         a: [
-//             "Cultural practices, peer pressure, and seemingly ordinary privileges can compromise faith",
-//             "Only obviously sinful actions affect spiritual integrity",
-//             "Faith is only threatened by legal restrictions, not everyday environments",
-//             "Believers are naturally immune to environmental influence"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "How can the lessons of Daniel 1 inform modern-day decision-making in professional or academic settings?",
-//         a: [
-//             "Maintaining integrity and refusing compromise can lead to favor and success without sacrificing principles",
-//             "It is better to conform to peer pressure for faster progress",
-//             "Success is unrelated to ethical choices",
-//             "Avoiding challenges entirely ensures safety and favor"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "What is the connection between 'personal resolution' (Daniel 1:8) and long-term spiritual and social impact?",
-//         a: [
-//             "Deliberate choices to honor God can produce influence, respect, and divine favor over time",
-//             "Personal decisions have no effect beyond immediate circumstances",
-//             "Social approval matters more than spiritual integrity",
-//             "Long-term impact depends only on luck and timing"
-//         ],
-//         correct: 0
-//     },
-//     {
-//         q: "If Daniel and his friends had compromised, what does the lesson suggest about the potential consequences?",
-//         a: [
-//             "Short-term convenience could have led to long-term spiritual loss and loss of God’s favor",
-//             "Compromise has no lasting effect if intentions remain good",
-//             "God would have automatically corrected their mistakes without consequence",
-//             "They would still have gained favor through popularity alone"
-//         ],
-//         correct: 0
-//     }
-// ];
 const quizQuestions = [
     {
-        q: "According to 1 Corinthians 3:3–4, which behavior most clearly reveals carnality among believers?",
+        q: "According to the introduction, what has caused some believers to consider leaving God?",
         a: [
-            "Envy, strife, division, and preference",
-            "Differences in spiritual gifts",
-            "Active church participation",
-            "Growth in material possessions"
+            "Lack of church attendance",
+            "Discouragement from unanswered prayers",
+            "Persecution from the government",
+            "Loss of material possessions"
         ],
-        correct: 0
+        correct: 1
     },
     {
-        q: "How does the lesson define worldliness?",
+        q: "What spiritual principle is taught by Elijah praying after declaring the coming rain?",
         a: [
-            "Conducting one’s life according to the systems and principles of the derailed world order",
-            "Living outside society completely",
-            "Possessing material wealth",
-            "Having cultural diversity"
+            "Faith replaces prayer",
+            "Miracles happen automatically",
+            "Declarations must be backed by persistent prayer",
+            "Prophets never need to pray"
         ],
-        correct: 0
+        correct: 2
     },
     {
-        q: "What illustration is used to explain carnality in the lesson?",
+        q: "Why was Ahab unable to eat before Elijah’s good news?",
         a: [
-            "A soldier acting like an ordinary civilian",
-            "A farmer neglecting his crops",
-            "A king abandoning his throne",
-            "A child refusing discipline"
+            "He was observing a religious fast",
+            "He was troubled by the suffering caused by the drought",
+            "He had no food in the palace",
+            "He was sick"
         ],
-        correct: 0
+        correct: 1
     },
     {
-        q: "Why did the believers in Corinth struggle in their relationships?",
+        q: "What does the lesson suggest is necessary for some prayers to be answered?",
         a: [
-            "They failed to distinguish between conduct in God’s kingdom and the kingdom of men",
-            "They lacked spiritual gifts",
-            "They were persecuted by outsiders",
-            "They misunderstood church leadership"
+            "Waiting for a prophet to pray for you",
+            "Offering large sacrifices",
+            "Coming to the spiritual equivalent of Mt. Carmel",
+            "Changing your location physically"
         ],
-        correct: 0
+        correct: 2
     },
     {
-        q: "Which attitude is expected in God’s kingdom instead of envy?",
+        q: "What is the deeper meaning of Elijah being ‘buried in prayer’?",
         a: [
-            "Esteeming others above oneself",
-            "Competing for recognition",
-            "Self-promotion",
-            "Avoiding relationships"
+            "Repeating the same words",
+            "Avoiding public worship",
+            "Praying only in secret places",
+            "Complete humility and total concentration before God"
         ],
-        correct: 0
+        correct: 3
     },
     {
-        q: "According to the lesson, what often causes great and potential men to live as ordinary men?",
+        q: "What condition in Israel led to the three and a half years of closed heavens?",
         a: [
-            "Lack of knowledge of their true identity",
-            "Lack of natural talent",
-            "Lack of social connections",
-            "Lack of formal education"
+            "Natural climate change",
+            "Their transgressions",
+            "Enemy attacks",
+            "Poor leadership alone"
         ],
-        correct: 0
+        correct: 1
     },
     {
-        q: "What happens when iniquity becomes the approved way of life in a society?",
+        q: "According to the lesson, what must accompany revelations from God?",
         a: [
-            "Love for God grows cold",
-            "Faith becomes stronger",
-            "Righteousness increases",
-            "Spiritual maturity accelerates"
+            "Immediate celebration",
+            "Prayer that removes obstacles",
+            "Public announcements",
+            "Fasting only"
         ],
-        correct: 0
+        correct: 1
     },
     {
-        q: "Which factor directly reflects love for the godless system of the world?",
+        q: "What key spiritual danger is highlighted in the introduction?",
         a: [
-            "Choosing the world over faithfulness to God",
-            "Living peacefully with others",
-            "Respecting authority",
-            "Participating in cultural activities"
+            "Praying too often",
+            "Overconfidence in prayer",
+            "Turning away from God due to discouragement",
+            "Trusting prophets too much"
         ],
-        correct: 0
+        correct: 2
     },
     {
-        q: "According to 1 John 2:16 as used in the lesson, which of the following fuels carnality?",
+        q: "What does Elijah’s example teach about delayed answers to prayer?",
         a: [
-            "Lust of the flesh, lust of the eyes, and pride of life",
-            "Hard work and diligence",
-            "Community involvement",
-            "Spiritual discipline"
+            "Delays mean God has rejected the prayer",
+            "Prayer is unnecessary after prophecy",
+            "Only sinners experience delays",
+            "Even great prophets must pray persistently"
         ],
-        correct: 0
+        correct: 3
     },
     {
-        q: "What warning does the conclusion of the lesson give concerning worldliness and carnality?",
+        q: "What condition must a believer meet for God to work through them according to the conclusion?",
         a: [
-            "They are avenues that can lead to damnation and must be fled from",
-            "They are unavoidable stages of spiritual growth",
-            "They have no serious spiritual consequences",
-            "They only affect unbelievers"
+            "They must perform miracles",
+            "They must not faint or give up",
+            "They must be prophets",
+            "They must live on a mountain"
         ],
-        correct: 0
+        correct: 1
     }
 ];
+
 
 
 const SundaySchoolApp = () => {
@@ -456,242 +290,81 @@ const SundaySchoolApp = () => {
         prayerPoints: string[];
     };
     
-    
-// const [contentData, setContentData] = useState<ContentData>({
-//     lessonDate: "September 4, 2016",
-//     lessonTitle: "Worldliness and Carnality",
 
-//     memoryVerse:
-//         "No man that warreth entangleth himself with the affairs of this life; that he may please Him who hath chosen him to be a soldier.",
-//     memoryVerseRef: "2 Timothy 2:4",
+    const [contentData, setContentData] = useState<ContentData>({
+        lessonDate: "February 15, 2026",
+        lessonTitle: "Praying Until Something Happens (Part 1)",
 
-//     // Scriptures explicitly mentioned inside the Introduction area
-//     introScriptures: ["2 Timothy 2:4", "John 14:6"],
+        memoryVerse:
+            "For everyone that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened. - Matt. 7:8",
+        memoryVerseRef: "Matthew 7:8",
 
-//     // Main text of the lesson
-//     lessonIntroScriptures: ["1 Corinthians 3:1-5"],
+        introScriptures: ["1 John 5:14", "Matthew 7:7"],
+        lessonIntroScriptures: ["1 Kings 18:41-46"],
 
-//     introduction:
-//         "Every kingdom has its way of life and the kingdom of God is not an exception. In this light Jesus proclaimed to all especially to the kingdom’s citizens that He is that Way of life. Most of the citizens of God’s kingdom have failed to realize this fact and are living as citizens of this world. Worldliness means conducting one’s life according to the systems and the principles of the derailed World Order, while Carnality is the behavioral patterns of action like an ordinary person e.g. a Soldier acting like an ordinary civilian – 2 Tim. 2:4. A Nigerian will always have problems if he lives as one in another nation. Jesus implies that as citizens of the kingdom we can only prevail if we live like Him in God’s kingdom.",
+        introduction:
+            "Even though we were not supposed to hinge our worship to God for His provisions, many children of God have often reached the limit of their endurance due to unanswered prayers. Some people have turned away from God while others are still brooding over the idea of leaving God with excuses of unanswered prayers. If only we could go a little more distance in prayer, our answers will come because prayers done according to His will always enjoy answers – 1 John 5:14; Matt. 7:7.",
 
-//     aims:
-//         "To cause Christ believers to live as citizens of God’s kingdom here on earth.",
+        aims:
+            "To encourage Christ believers to pray continuously until the results are received.",
 
-//     objectives:
-//         "To impact the earth, its occupants and one’s self with offer of God’s kingdom.",
+        objectives:
+            "That Christians be delivered from discouragement and backsliding.",
 
-//     lessonIntro:
-//         "The believers of Christ in Corinth were having the problem of relating with one another. They didn’t understand the separate application of relationship between people in God’s kingdom and the kingdom of men. Consequently, they were living as ordinary men would in God’s kingdom. This is the picture of many citizens of God’s kingdom in our domain and is responsible for the many ungodly results. Let’s study this lesson that is meant to reposition us as children of God to meet with the image that’s expected of us.",
+        lessonIntro:
+            "Ahab and Israel had experienced three and half years of closed heavens and economic constraint because of their transgressions but received the best news of that time from Prophet Elijah that it was going to rain. Elijah prayed fervently after declaration until it rained even when it appeared futile enough to be discouraging. Consider the kind of fiery Prophet he was to have delayed answer. (1 Kings 18:41–46)",
 
+        lessonPoints: [
+            {
+                title: "APPETITE DENIED BY WORRIES:",
+                content:
+                    "Verse 41 - King Ahab was worried about the agonizing experience of Israel from the closed heaven and hardship. The good news is that right relationship with God and prayers can change conditions.",
+                scriptures: ["1 Kings 18:41"],
+                subPoints: [],
+            },
+            {
+                title: "REVELATION REQUIRED PRAYER BACK-UP:",
+                content:
+                    "Verse 41-42 – Elijah heard the sound of rain but didn’t wait for it to fall. He prayed it down. Your revelations require prayers to facilitate or to clear the obstacles.",
+                scriptures: ["1 Kings 18:41-42"],
+                subPoints: [],
+            },
+            {
+                title: "GOOD NEWS REVIVES:",
+                content:
+                    "Verse 42 – King Ahab was encouraged by the good news to eat after starving for a long while because of the ugly events in the kingdom. We are under obligation to tell other people about the gospel of hope.",
+                scriptures: ["1 Kings 18:42"],
+                subPoints: [],
+            },
+            {
+                title: "THE TOP OF THE MT. CARMEL:",
+                content:
+                    "Verse 42 – Some prayers cannot be answered until you come to the top of Mt. Carmel (the House of the Lord). Isa. 2:2–3; Micah 4:1–2. This is the place where the altar was repaired, where blood was shed, and where the fire fell. If Elijah could recognize that, we need to.",
+                scriptures: ["1 Kings 18:42", "Isaiah 2:2-3", "Micah 4:1-2"],
+                subPoints: [],
+            },
+            {
+                title: "BURIED IN PRAYER:",
+                content:
+                    "Verse 42 – Elijah humbled himself before the Lord and was completely buried in prayer. He gave total concentration. He was cut off from the surrounding and the world. He was in turn with divinity. He emptied himself and put on immortality. No wonder his prayers were answered. If we adopt his model, we will surely receive answers to prayers in due time.",
+                scriptures: ["1 Kings 18:42"],
+                subPoints: [],
+            },
+        ],
 
-//     lessonPoints: [
-//         {
-//             title: "Signals of Worldliness and Carnality (Vs 3-4)",
-//             content:
-//                 "With the subject earlier defined, we can now see that many professed Christians are worldly in conduct unawares while others maintain worldliness for possession sake. Here are some of the signs that indicate that a person is worldly and carnal: Envy, Strife, Division and preference - Vs 3-4. These are the ways the worldly conducts themselves and obtain what they want. Therefore to do the same is tantamount to being like them. Other signs are of Cultural practices, obtainable mode of present day marriages, business practices and religion. Inability to separate one's self by Godly standards is a sign of worldliness and carnality. In God's kingdome",
-//             scriptures: [
-//                 "1 Corinthians 3:3-4",
-//                 "Galatians 1:13-14",
-//                 "Colossians 2:8",
-//                 "Colossians 2:20 (NIV)",
-//                 "Matthew 24:38",
-//             ],
-//             subPoints: [],
-//         },
-//         {
-//             title: "Practice in God’s Kingdom",
-//             content:
-//                 "In God’s kingdom the practice is to esteem the other above yourself as against envy, allowing another person first as against strife, and seeing all as one instead of preference and division.",
-//             scriptures: [
-//                 "Philippians 2:3",
-//                 "1 Corinthians 14:29-33",
-//                 "1 Corinthians 3:8",
-//                 "1 Corinthians 12:13",
-//             ],
-//             subPoints: [],
-//         },
-//         {
-//             title: "What Makes a Person Live as Worldly and Carnal",
-//             content:
-//                 "Great and potential men do live as ordinary and worthless men because of the following factors:\n\n(a) Lack of knowledge of one’s true identity.\n(b) When iniquity becomes the approved and leading way of life.\n(c) When love for God grows cold.\n(d) When one feels obligated to godless tradition.\n(e) When one is in love with the godless system of the world.\n(f) When one has the lunch to satisfy the cravings of the flesh which is tailored by the evil nature of Satan imbibed at the fall of man.\n(g) When the lust of the eyes becomes predominant in one’s heart.\n(h) When one is controlled by the hunch of self exaltation because of what he has and does.",
-//             scriptures: [
-//                 "Hosea 4:6",
-//                 "Matthew 24:12",
-//                 "Galatians 1:14",
-//                 "2 Timothy 4:10",
-//                 "1 John 2:16",
-//             ],
-//             subPoints: [
-//                 {
-//                     title: "Lack of knowledge of one’s true identity",
-//                     content: "Lack of knowledge of one’s true identity.",
-//                     scripture: "Hosea 4:6", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//                 {
-//                     title: "Iniquity becomes approved",
-//                     content:
-//                         "When iniquity becomes the approved and leading way of life.",
-//                     scripture: "Matthew 24:12", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//                 {
-//                     title: "Love for God grows cold",
-//                     content: "When love for God grows cold.",
-//                     scripture: "Matthew 24:12", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//                 {
-//                     title: "Obligated to godless tradition",
-//                     content:
-//                         "When one feels obligated to godless tradition.",
-//                     scripture: "Galatians 1:14", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//                 {
-//                     title: "Love for the world system",
-//                     content:
-//                         "When one is in love with the godless system of the world.",
-//                     scripture: "2 Timothy 4:10", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//                 {
-//                     title: "Cravings of the flesh",
-//                     content:
-//                         "When one has the lunch to satisfy the cravings of the flesh which is tailored by the evil nature of Satan imbibed at the fall of man.",
-//                     scripture: "1 John 2:16", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//                 {
-//                     title: "Lust of the eyes",
-//                     content:
-//                         "When the lust of the eyes becomes predominant in one’s heart.",
-//                     scripture: "1 John 2:16", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//                 {
-//                     title: "Pride / self exaltation",
-//                     content:
-//                         "When one is controlled by the hunch of self exaltation because of what he has and does.",
-//                     scripture: "1 John 2:16", // Changed from scriptures: [...] to scripture: "..."
-//                 },
-//             ],
-//         },
-//     ],
+        conclusion:
+            "The God of Elijah who sent down fire is also your God, and He is delighted to work through you if you faint not like Elijah didn’t.",
 
-//     conclusion:
-//         "Only those citizens who abide by the principles of the kingdom of God will enjoy the benefits thereof but others will face the wrath of the government of the kingdom. Worldliness and carnality are enough avenues for damnation therefore flee from it.",
+        conclusionScriptures: [],
 
-//     conclusionScriptures: [],
-
-//     prayerPoints: [
-//         "Father, help me not to entangle myself with the affairs of this life.",
-//         "Lord, help me to live by the principles of Your kingdom and not the derailed world order.",
-//         "Holy Spirit, deliver me from envy, strife, division, and preference.",
-//         "Father, help me to esteem others above myself and to walk in unity.",
-//         "Lord, keep my heart from the lust of the flesh, lust of the eyes, and the pride of life.",
-//         "Father, help me to flee from worldliness and carnality.",
-//     ],
-// });
-
-const [contentData, setContentData] = useState<ContentData>({
-    lessonDate: "February 1, 2026",
-    lessonTitle: "Worldliness and Carnality",
-
-    memoryVerse:
-        "No man that warreth entangleth himself with the affairs of this life; that he may please Him who hath chosen him to be a soldier. 2 Tim. 2:4",
-    memoryVerseRef: "2 Tim. 2:4",
-
-    introScriptures: ["2 Tim. 2:4", "Jn 14:6"],
-    lessonIntroScriptures: ["1 CORINTHIANS 3:1-5"],
-
-    introduction:
-        "Every kingdom has its way of life and the kingdom of God is not an exception. In this light Jesus proclaimed to all especially to the kingdom's citizens that He is that Way of life. Most of the citizens of God's kingdom have failed to realize this fact and are living as citizens of this world. Worldliness means conducting One's life according to the systems and the principles of the derailed World Order, while Carnality is the behavioral patterns of action like an ordinary person e.g. a Soldier acting like an ordinary civilian - 2 Tim. 2:4. A Nigerian will always have problems if he lives as one in another nation. Jesus implies that as citizens of the kingdom we can only prevail if we live like Him in God's kingdom.\nJn 14:6",
-
-    aims:
-        "To cause Christ believers to live as citizens of God's kingdom here on earth.",
-
-    objectives:
-        "To impact the earth, its occupants and one's self with offer of God's kingdom.",
-
-    lessonIntro:
-        "The believers of Christ in Corinth were having the problem of relating with one another. They didn't understand the separate application of relationship between people in God's kingdom and the kingdom of men. Consequently, they were living as ordinary men would in God's kingdom. This is the picture of many citizens of God's kingdom in our domain and is responsible for the many ungodly results. Let's study this lesson that is meant to reposition us as children of God to meet with the image that's expected of us.",
-
-    lessonPoints: [
-        {
-            title: "SIGNALS OF WORLDLINESS AND CARNALITY:",
-            content:
-                "With the subject earlier defined, we can now see that many professed Christians are worldly in conduct unawares while others maintain worldliness for possession sake. Here are some of the signs that indicate that a person is worldly and carnal. Envy, Strife, Division and preference - Vs 3-4. These are the ways the worldly conducts themselves and obtain what they want. Therefore to do the same is tantamount to being like them. Other signs are of Cultural practices, obtainable mode of present day marriages, business practices and religion. Inability to separate one's self by Godly standards is a sign of worldliness and carnality. Galatians 1:13-14; Col. 2:8, 20 (NIV); Matt. 24:38.\n\nIn God's kingdom the practice is to esteem the other above yourself as against envy (Phil. 2:3), Allowing another person first as against strife (I Cor. 14:29-33) and seeing all as one instead of preference and division (I Cor. 3:8; 12:13).",
-            scriptures: [
-                "1 Corinthians 3:3-4",
-                "Galatians 1:13-14",
-                "Colossians 2:8",
-                "Colossians 2:20",
-                "Matthew 24:38",
-                "Philippians 2:3",
-                "1 Corinthians 14:29-33",
-                "1 Corinthians 3:8",
-                "1 Corinthians 12:13",
-            ],
-            subPoints: [],
-        },
-        {
-            title: "WHAT MAKES A PERSON LIVE AS WORLDLY AND CARNAL:",
-            content: `Great and potential men do live as ordinary and worthless men because of the following factors:
-
-                (a) Lack of knowledge of one's true identity
-                Hos. 4:6
-
-                (b) When iniquity becomes the approved and leading way of life
-                Matt. 24:12
-
-                (c) When love for God grows cold
-                Matt. 24:12
-
-                (d) When one feels obligated to godless tradition
-                Gal. 1:14
-
-                (e) When one is in love with the godless system of the world
-                2 Tim. 4:10
-
-                (f) When one has the lunch to satisfy the cravings of the flesh which is tailored by the evil nature of Satan imbibed at the fall of man
-                1 Jn. 2:16
-
-                (g) When the lust of the eyes becomes predominant in one's heart
-                1 Jn. 2:16
-
-                (h) When one is controlled by the hunch of self exaltation because of what he has and does
-                1 Jn. 2:16`,
+        prayerPoints: [
+            "Father, give me the grace to pray continuously until my answers come.",
+            "Lord, deliver me from discouragement and strengthen my faith while I wait for Your answers.",
+            "Father, help me to humble myself in prayer and remain persistent like Elijah until something happens.",
+        ],
+    });
 
 
-
-
-        scriptures: [
-                "Hosea 4:6",
-                "Matthew 24:12",
-                "Galatians 1:14",
-                "2 Timothy 4:10",
-                "1 John 2:16",
-            ],
-            subPoints: [],
-        },
-    ],
-
-    conclusion:
-        "Only those citizens who abide by the principles of the kingdom of God will enjoy the benefits thereof but others will face the wrath of the government of the kingdom. Worldliness and carnality are enough avenues for damnation therefore flee from it.",
-
-    conclusionScriptures: [],
-
-    // Not provided on the scanned pages you shared
-    prayerPoints: [
-        "Father, help me not to entangle myself with the affairs of this life, but to live to please You who has chosen me as a soldier.",
-        "Lord, deliver me from every form of worldliness and carnality in my thoughts, actions, and decisions.",
-        "Father, help me to live as a true citizen of Your kingdom and not as a citizen of this world.",
-        "Holy Spirit, open my eyes to understand my true identity in Christ and keep me from living as an ordinary man.",
-        "Lord, uproot envy, strife, division, and preference from my heart and help me to walk in love and unity.",
-        "Father, help me to esteem others above myself and to allow peace to reign in my relationships.",
-        "Lord, give me grace to separate myself from ungodly cultural practices, traditions, and systems that oppose Your will.",
-        "Father, keep my heart from loving the godless system of this world and help me to remain faithful to You.",
-        "Lord, quench every lust of the flesh, lust of the eyes, and pride of life working against my spiritual growth.",
-        "Holy Spirit, keep my love for God alive and prevent it from growing cold in these last days.",
-        "Father, help me to flee from every form of carnality that can lead to destruction and damnation.",
-        "Lord, empower me to live by the principles of Your kingdom so that I may enjoy its benefits.",
-    ],
-
-});
 
 
 
@@ -1080,7 +753,7 @@ const [contentData, setContentData] = useState<ContentData>({
                             Sunday School Lesson
                         </h1>
                         <p className="text-xl opacity-80">
-                            Worldliness and Carnality
+                            Praying Until Something Happens (Part 1)
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -1352,19 +1025,19 @@ const [contentData, setContentData] = useState<ContentData>({
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-bold mb-3">
-                                        Text: 1 Corinthians 3:1-5
+                                        Text: 1 Kings 18:41-46
                                     </h3>
                                     <div className="flex gap-2 flex-wrap">
                                         <button
                                             onClick={() =>
                                                 showBibleVersions(
-                                                    "1 Corinthians 3:1-5"
+                                                    "1 Kings 18:41-46"
                                                 )
                                             }
                                             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2"
                                         >
                                         <BookOpen size={16} />
-                                            Read 1 Corinthians 3:1-5
+                                            Read 1 Kings 18:41-46
                                         </button>
 
                                     </div>
@@ -1392,17 +1065,32 @@ const [contentData, setContentData] = useState<ContentData>({
                                     ) : (
                                         <p className="leading-relaxed">
                                             {contentData.introduction}
+                                            <div className="flex gap-4">
+                                                <button
+                                                onClick={() =>
+                                                    showBibleVersions(
+                                                        "1 John 5:14"
+                                                    )
+                                                }
+                                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
+                                            >
+                                            <BookOpen size={16} />
+                                                1 John 5:14
+                                            </button>
+
                                             <button
                                             onClick={() =>
                                                 showBibleVersions(
-                                                    "John 14:6"
+                                                    "Matthew 7:7"
                                                 )
                                             }
                                          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
                                         >
                                             <BookOpen size={16} />
-                                                John 14:6
+                                                Matthew 7:7
                                             </button>
+                                            </div>
+                                            
                                         </p>
                                         
                                     )}
@@ -1904,108 +1592,99 @@ const [contentData, setContentData] = useState<ContentData>({
 
                         {activeTab === "application" && (
                             <div className="space-y-6">
-                                <h3 className="text-2xl font-bold mb-4">Personal Application</h3>
+                            <h3 className="text-2xl font-bold mb-4">Personal Application</h3>
 
-                                {/* Self-Assessment */}
-                                <div
-                                    className={`${
-                                        darkMode
-                                            ? "bg-gray-700"
-                                            : "bg-gradient-to-r from-blue-50 to-indigo-50"
-                                    } p-6 rounded-lg`}
+                            {/* Self-Assessment */}
+                            <div
+                            className={`${
+                                darkMode ? "bg-gray-700" : "bg-gradient-to-r from-blue-50 to-indigo-50"
+                            } p-6 rounded-lg`}
+                            >
+                            <h4 className="text-xl font-semibold mb-4">
+                                Self-Assessment: Persistence in Prayer
+                            </h4>
+
+                            <p className="mb-4">
+                                On a scale of 1 to 10, how consistent are you in praying until you receive an
+                                answer—without discouragement or giving up—according to God’s will (Matt. 7:7–8; 1
+                                John 5:14)?
+                            </p>
+
+                            <div className="flex items-center gap-4">
+                                <input
+                                type="range"
+                                min="1"
+                                max="10"
+                                value={faithRating}
+                                onChange={(e) => setFaithRating(Number(e.target.value))}
+                                className="flex-1"
+                                />
+                                <span className="text-2xl font-bold text-blue-600">{faithRating}/10</span>
+                            </div>
+
+                            <p className="mt-3 text-sm italic">
+                                {faithRating >= 8
+                                ? "Excellent! Stay consistent—keep praying and trusting God until the answer comes."
+                                : faithRating >= 5
+                                ? "Good progress. Identify what usually discourages you and make a plan to stay persistent."
+                                : "This is a call to strengthen your prayer life. Ask God for grace to endure and not faint."}
+                            </p>
+                            </div>
+
+                            {/* Personal Decisions */}
+                            <div
+                            className={`${
+                                darkMode ? "bg-gray-700" : "bg-white border border-gray-200"
+                            } p-6 rounded-lg`}
+                            >
+                            <h4 className="text-xl font-semibold mb-4">
+                                Personal Decisions: Pray Until Something Happens
+                            </h4>
+
+                            <div className="flex flex-col sm:flex-row gap-2 mb-4">
+                                <input
+                                type="text"
+                                value={commitmentInput}
+                                onChange={(e) => setCommitmentInput(e.target.value)}
+                                placeholder="Write a personal decision (e.g., pray daily, avoid discouragement, wait on God, pray through obstacles, seek God’s will)..."
+                                className={`flex-1 px-4 py-2 rounded-lg border ${
+                                    darkMode ? "bg-gray-800 border-gray-600" : "bg-white border-gray-300"
+                                }`}
+                                onKeyPress={(e) => e.key === "Enter" && addCommitment()}
+                                />
+                                <button
+                                onClick={addCommitment}
+                                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition flex items-center justify-center gap-2 w-full sm:w-auto"
                                 >
-                                    <h4 className="text-xl font-semibold mb-4">
-                                        Self-Assessment: Worldliness vs Kingdom Conduct
-                                    </h4>
+                                <Save size={16} /> Save
+                                </button>
+                            </div>
 
-                                    <p className="mb-4">
-                                        On a scale of 1 to 10, how consistently do you live by the
-                                        principles of God’s kingdom—avoiding envy, strife, division, and
-                                        preference—and choosing unity and humility (1 Cor. 3:3–4; Phil. 2:3)?
-                                    </p>
-
-                                    <div className="flex items-center gap-4">
-                                        <input
-                                            type="range"
-                                            min="1"
-                                            max="10"
-                                            value={faithRating}
-                                            onChange={(e) => setFaithRating(Number(e.target.value))}
-                                            className="flex-1"
-                                        />
-                                        <span className="text-2xl font-bold text-blue-600">
-                                            {faithRating}/10
-                                        </span>
-                                    </div>
-
-                                    <p className="mt-3 text-sm italic">
-                                        {faithRating >= 8
-                                            ? "Excellent! You are growing in kingdom-minded living—humility, unity, and peace."
-                                            : faithRating >= 5
-                                            ? "Good progress. Identify specific areas where envy, strife, or preference still shows up."
-                                            : "This is a call to re-evaluate your attitudes and relationships and align with God’s kingdom principles."}
-                                    </p>
-                                </div>
-
-                                {/* Personal Decisions */}
+                            <div className="space-y-2">
+                                {commitments.map((commitment, idx) => (
                                 <div
-                                    className={`${
-                                        darkMode ? "bg-gray-700" : "bg-white border border-gray-200"
-                                    } p-6 rounded-lg`}
+                                    key={idx}
+                                    className={`${darkMode ? "bg-gray-800" : "bg-gray-50"} p-3 rounded-lg flex items-start gap-3`}
                                 >
-                                    <h4 className="text-xl font-semibold mb-4">
-                                        Personal Decisions: Reject Worldliness and Carnality
-                                    </h4>
-
-                                    <div className="flex flex-col sm:flex-row gap-2 mb-4">
-                                        <input
-                                            type="text"
-                                            value={commitmentInput}
-                                            onChange={(e) => setCommitmentInput(e.target.value)}
-                                            placeholder="Write a personal decision (e.g., reject envy, stop strife, avoid favoritism, practice unity, honor others)..."
-                                            className={`flex-1 px-4 py-2 rounded-lg border ${
-                                                darkMode
-                                                    ? "bg-gray-800 border-gray-600"
-                                                    : "bg-white border-gray-300"
-                                            }`}
-                                            onKeyPress={(e) => e.key === "Enter" && addCommitment()}
-                                        />
-                                        <button
-                                            onClick={addCommitment}
-                                            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition flex items-center justify-center gap-2 w-full sm:w-auto"
-                                        >
-                                            <Save size={16} /> Save
-                                        </button>
+                                    <CheckCircle className="text-green-600 mt-1" size={20} />
+                                    <div className="flex-1">
+                                    <p>{commitment.text}</p>
+                                    <p className="text-xs opacity-70 mt-1">{commitment.date}</p>
                                     </div>
-
-                                    <div className="space-y-2">
-                                        {commitments.map((commitment, idx) => (
-                                            <div
-                                                key={idx}
-                                                className={`${
-                                                    darkMode ? "bg-gray-800" : "bg-gray-50"
-                                                } p-3 rounded-lg flex items-start gap-3`}
-                                            >
-                                                <CheckCircle className="text-green-600 mt-1" size={20} />
-                                                <div className="flex-1">
-                                                    <p>{commitment.text}</p>
-                                                    <p className="text-xs opacity-70 mt-1">
-                                                        {commitment.date}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <p className="mt-4 text-sm italic text-gray-500">
-                                        Worldliness and carnality often show up through envy, strife,
-                                        division, and preference (1 Cor. 3:3–4). Use this section to record
-                                        clear, practical decisions that help you live as a true citizen of
-                                        God’s kingdom and please the One who chose you (2 Tim. 2:4).
-                                    </p>
                                 </div>
+                                ))}
+                            </div>
+
+                            <p className="mt-4 text-sm italic text-gray-500">
+                                Elijah did not stop at the revelation—he prayed until the rain came (1 Kings
+                                18:41–46). Use this section to write clear and practical decisions that help you
+                                keep praying, overcome discouragement, and persist until your answer comes (Matt.
+                                7:7–8; 1 John 5:14).
+                            </p>
+                            </div>
                             </div>
                         )}
+
 
 
 
