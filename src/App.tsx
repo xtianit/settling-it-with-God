@@ -1211,7 +1211,7 @@ const SundaySchoolApp = () => {
                                     ) : (
                                         <p className="leading-relaxed">
                                             {contentData.introduction}
-                                            <div className="flex gap-4">
+                                            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 mt-4">
                                                 <button
                                                 onClick={() =>
                                                     showBibleVersions(
