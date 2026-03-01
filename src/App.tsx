@@ -792,7 +792,7 @@ const SundaySchoolApp = () => {
 
 
         if (appLoading) {
-    const animatedText = "Dancing in Fame and Glory".split("");
+    const animatedText = "Liberty for Fame and Glory".split("");
 
     return (
         <div className="fixed inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center z-50">
